@@ -1,7 +1,11 @@
 import "./page.scss";
 import React from "react";
 import Player from "../types/player";
-import getResults from "../data";
+import getResults from "../parser/data";
+
+export const metadata = {
+  title: "GeoCup Leaderboard",
+};
 
 export default function Home() {
   console.log("DATA:", getResults());
