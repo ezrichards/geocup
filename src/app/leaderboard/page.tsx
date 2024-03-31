@@ -1,15 +1,44 @@
 import "./page.scss";
 import React from "react";
-
+interface Player {
+  id: number;
+  name: string;
+  totalPoints: number;
+}
 export default function Home() {
+  const sampleData: Player[] = [
+    {
+      id: 6035953,
+      name: "Ethan",
+      totalPoints: 24000,
+    },
+    {
+      id: 5389539,
+      name: "Shane",
+      totalPoints: 23953,
+    },
+    {
+      id: 3941340,
+      name: "Sumner",
+      totalPoints: 24500,
+    },
+  ];
+
   return (
-    <main className="p-leaderboard">
+    <>
       <h1>Leaderboard</h1>
-      <p>
-        Welcome to the leaderboard! Here you can see how you stack up against
-        the competition. The leaderboard is updated every day around 9:00 PM
-        MST. You can also view the leaderboard for previous days.
-      </p>
-    </main>
+      <div className="flex-grid">
+        {sampleData.map((player: Player) => (
+          <React.Fragment key={player.id}>
+            <div className="col">
+              <p>{player.name}</p>
+            </div>
+            <div className="col">
+              <p>{player.totalPoints}</p>
+            </div>
+          </React.Fragment>
+        ))}
+      </div>
+    </>
   );
 }
