@@ -1,14 +1,18 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/home/Home";
+import LeaderboardPage from "./pages/leaderboard/Leaderboard";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
     children: [
       {
-        path: "/leaderboard",
+        path: "/",
         element: <HomePage />,
+      },
+      {
+        path: "/leaderboard",
+        element: <LeaderboardPage />,
       },
     ],
   },
