@@ -1,11 +1,11 @@
 import "./page.scss";
 import React from "react";
-interface Player {
-  id: number;
-  name: string;
-  totalPoints: number;
-}
+import Player from "../types/player";
+import getResults from "../data";
+
 export default function Home() {
+  console.log("DATA:", getResults());
+
   const sampleData: Player[] = [
     {
       id: 6035953,
