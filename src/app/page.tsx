@@ -1,8 +1,10 @@
-import "./Home.css";
+import Link from "next/link";
+import "./page.scss";
+import React from "react";
 
-const HomePage = () => {
+export default function Home() {
   return (
-    <>
+    <main className="p-home">
       <h1>GeoCup</h1>
       <div className="welcome">
         <p>
@@ -16,11 +18,9 @@ const HomePage = () => {
             Results will be uploaded to the site around 9:00 PM MST every day.
           </strong>{" "}
           You can still play afterwards, you just may not show up on the live
-          <a href="/leaderboard"> leaderboard</a>.
+          <Link href="/leaderboard"> leaderboard</Link>.
         </p>
       </div>
-    </>
+    </main>
   );
-};
-
-export default HomePage;
+}

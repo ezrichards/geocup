@@ -1,13 +1,11 @@
+import "./page.scss";
 import React from "react";
-import "./Leaderboard.css";
-
 interface Player {
   id: number;
   name: string;
   totalPoints: number;
 }
-
-const LeaderboardPage = () => {
+export default function Home() {
   const sampleData: Player[] = [
     {
       id: 6035953,
@@ -43,6 +41,4 @@ const LeaderboardPage = () => {
       </div>
     </>
   );
-};
-
-export default LeaderboardPage;
+}
