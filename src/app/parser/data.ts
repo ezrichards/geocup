@@ -1,5 +1,5 @@
 import fs from "fs";
-import results from "../../../games/mar31-TyFNs8V8EpAxc9VU.json";
+import results from "../../../games/apr1-VNW0sppUUiYr0xmz.json";
 import Player from "../types/player";
 
 const getResults = () => {
@@ -18,7 +18,7 @@ const getResults = () => {
       totalPoints: Number(item.game.player.totalScore.amount),
       totalTimeSeconds: Number(item.game.player.totalTime),
       percentage: Number(item.game.player.totalScore.percentage),
-    }),
+    })
   );
   return players;
 };
