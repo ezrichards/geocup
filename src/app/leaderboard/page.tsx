@@ -2,47 +2,41 @@ import "./page.scss";
 import React from "react";
 import Player from "../types/player";
 import getResults from "../parser/data";
+import Link from "next/link";
 
 export const metadata = {
   title: "GeoCup Leaderboard",
 };
 
 export default function Home() {
-  console.log("DATA:", getResults());
-
-  const sampleData: Player[] = [
-    {
-      id: 6035953,
-      name: "Ethan",
-      totalPoints: 24000,
-    },
-    {
-      id: 5389539,
-      name: "Shane",
-      totalPoints: 23953,
-    },
-    {
-      id: 3941340,
-      name: "Sumner",
-      totalPoints: 24500,
-    },
-  ];
+  const data: Player[] = getResults();
 
   return (
     <>
-      <h1>Leaderboard</h1>
-      <div className="flex-grid">
-        {sampleData.map((player: Player) => (
-          <React.Fragment key={player.id}>
-            <div className="col">
-              <p>{player.name}</p>
-            </div>
-            <div className="col">
-              <p>{player.totalPoints}</p>
-            </div>
-          </React.Fragment>
+      <h1>All Time Leaderboard</h1>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Total Points</th>
+          <th>Total Time (sec)</th>
+          <th>% Accuracy</th>
+        </tr>
+        {data.map((player: Player) => (
+          <tr>
+            <React.Fragment key={player.id}>
+              <td>{player.name}</td>
+              <td>{player.totalPoints}</td>
+              <td>{player.totalTimeSeconds}</td>
+              <td>{player.percentage}</td>
+            </React.Fragment>
+          </tr>
         ))}
-      </div>
+      </table>
+
+      <br />
+      <Link href="/">Go back to home</Link>
+      {/* <div className="flex-grid"> */}
+      {/* </div> */}
     </>
   );
 }

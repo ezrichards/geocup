@@ -1,15 +1,26 @@
 import fs from "fs";
 import results from "../../../games/mar31-TyFNs8V8EpAxc9VU.json";
+import Player from "../types/player";
 
 const getResults = () => {
-    fs.readdirSync("games").forEach((file) => {
-        console.log(file);
-      });
+  const players: Player[] = [];
 
-    // console.log("hello!");
+  // fs.readdirSync("games").forEach((file) => {
+  //   const results = import(`../../../games/${file}`);
+  //   console.log(results);
+  // });
 
-    // console.log(results);
-    return results
-}
+  // TODO fix this any type
+  results.items.map((item: any) =>
+    players.push({
+      id: item.userId,
+      name: item.playerName,
+      totalPoints: Number(item.game.player.totalScore.amount),
+      totalTimeSeconds: Number(item.game.player.totalTime),
+      percentage: Number(item.game.player.totalScore.percentage),
+    })
+  );
+  return players;
+};
 
-export default getResults
+export default getResults;

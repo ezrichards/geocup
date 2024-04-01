@@ -1,12 +1,23 @@
+import fs from "fs";
 import Link from "next/link";
 import "./page.scss";
 import React from "react";
+import Day from "./types/day";
 
 export const metadata = {
   title: "GeoCup",
 };
 
 export default function Home() {
+  const games: Day[] = [];
+
+  fs.readdirSync("games").forEach((file, index) => {
+    games.push({
+      code: file.split("-")[1].split(".")[0],
+      day: index + 1,
+    });
+  });
+
   return (
     <main className="p-home">
       <h1>GeoCup</h1>
@@ -29,15 +40,19 @@ export default function Home() {
           This site is still under construction! Send me a message on Discord @{" "}
           <strong>ethanzr</strong> with any feedback or bugs.
         </p>
-        <p>
-          <strong>Day 1: </strong>{" "}
-          <a
-            target="_blank"
-            href="https://www.geoguessr.com/challenge/TyFNs8V8EpAxc9VU"
-          >
-            https://www.geoguessr.com/challenge/TyFNs8V8EpAxc9VU
-          </a>
-        </p>
+        {games.reverse().map((game) => (
+          <p>
+            <strong>
+              Day {game.day} (4/{game.day}/24):{" "}
+            </strong>{" "}
+            <a
+              target="_blank"
+              href={`https://www.geoguessr.com/challenge/${game.code}`}
+            >
+              https://www.geoguessr.com/challenge/{game.code}
+            </a>
+          </p>
+        ))}
       </div>
     </main>
   );

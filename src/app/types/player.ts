@@ -1,5 +1,7 @@
 export default interface Player {
-    id: number;
-    name: string;
-    totalPoints: number;
+  id: string;
+  name: string;
+  totalPoints: number;
+  totalTimeSeconds: number;
+  percentage: number;
 }
