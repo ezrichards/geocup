@@ -22,7 +22,7 @@ export default function Home() {
           <th>% Accuracy</th>
         </tr>
         {data.map((player: Player) => (
-          <tr>
+          <tr key={player.id}>
             <React.Fragment key={player.id}>
               <td>{player.name}</td>
               <td>{player.totalPoints}</td>

@@ -41,7 +41,7 @@ export default function Home() {
           <strong>ethanzr</strong> with any feedback or bugs.
         </p>
         {games.reverse().map((game) => (
-          <p>
+          <p key={game.code}>
             <strong>
               Day {game.day} (4/{game.day}/24):{" "}
             </strong>{" "}
