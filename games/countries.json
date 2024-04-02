@@ -1,0 +1,101 @@
+{
+  "totals": [
+    {
+      "name": "ethanzr",
+      "countries": [
+        {
+          "code": "us",
+          "count": 1
+        },
+        {
+          "code": "fr",
+          "count": 1
+        },
+        {
+          "code": "in",
+          "count": 1
+        },
+        {
+          "code": "au",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Sumner Evans",
+      "countries": [
+        {
+          "code": "us",
+          "count": 1
+        },
+        {
+          "code": "fr",
+          "count": 1
+        },
+        {
+          "code": "in",
+          "count": 1
+        },
+        {
+          "code": "au",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Shane",
+      "countries": [
+        {
+          "code": "au",
+          "count": 1
+        },
+        {
+          "code": "fr",
+          "count": 1
+        },
+        {
+          "code": "us",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Breadleaf",
+      "countries": [
+        {
+          "code": "us",
+          "count": 1
+        },
+        {
+          "code": "fr",
+          "count": 1
+        },
+        {
+          "code": "in",
+          "count": 1
+        },
+        {
+          "code": "au",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "name": "Dorian",
+      "countries": [
+        {
+          "code": "us",
+          "count": 1
+        },
+        {
+          "code": "fr",
+          "count": 1
+        },
+        {
+          "code": "in",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}
