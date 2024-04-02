@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "GeoCup Leaderboard",
+  description: "The GeoCup Leaderboard",
 };
 
 export default function Home() {

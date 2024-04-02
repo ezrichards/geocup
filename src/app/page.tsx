@@ -6,6 +6,7 @@ import Day from "./types/day";
 
 export const metadata = {
   title: "GeoCup",
+  description: "A mini GeoGuessr tournament held in April!",
 };
 
 export default function Home() {
