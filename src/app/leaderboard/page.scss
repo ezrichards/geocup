@@ -6,3 +6,14 @@
 .col {
   width: 32%;
 }
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 8px 12px;
+    border: 1px solid white;
+  }
+}
