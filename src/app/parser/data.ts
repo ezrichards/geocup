@@ -23,7 +23,7 @@ const getResults = () => {
       // totalPoints: Number(item.game.player.totalScore.amount),
       // totalTimeSeconds: Number(item.game.player.totalTime),
       // percentage: Number(item.game.player.totalScore.percentage),
-    })
+    }),
   );
   return players;
 };
