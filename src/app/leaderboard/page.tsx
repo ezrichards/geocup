@@ -20,7 +20,7 @@ export default function Home() {
           <th>Name</th>
           <th>Total Points</th>
           <th>Total Time (sec)</th>
-          <th>% Accuracy</th>
+          {/* <th>% Accuracy</th> */}
         </tr>
         {data.map((player: Player) => (
           <tr key={player.id}>
@@ -28,7 +28,7 @@ export default function Home() {
               <td>{player.name}</td>
               <td>{player.totalPoints}</td>
               <td>{player.totalTimeSeconds}</td>
-              <td>{player.percentage}</td>
+              {/* <td>{player.percentage}</td> */}
             </React.Fragment>
           </tr>
         ))}
