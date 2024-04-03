@@ -5,7 +5,7 @@
       "countries": [
         {
           "code": "us",
-          "count": 1
+          "count": 3
         },
         {
           "code": "fr",
@@ -18,6 +18,10 @@
         {
           "code": "au",
           "count": 1
+        },
+        {
+          "code": "tw",
+          "count": 1
         }
       ]
     },
@@ -26,7 +30,7 @@
       "countries": [
         {
           "code": "us",
-          "count": 1
+          "count": 4
         },
         {
           "code": "fr",
@@ -34,7 +38,7 @@
         },
         {
           "code": "in",
-          "count": 1
+          "count": 2
         },
         {
           "code": "au",
@@ -55,6 +59,10 @@
         },
         {
           "code": "us",
+          "count": 4
+        },
+        {
+          "code": "in",
           "count": 1
         }
       ]
@@ -64,7 +72,7 @@
       "countries": [
         {
           "code": "us",
-          "count": 1
+          "count": 2
         },
         {
           "code": "fr",
@@ -77,6 +85,10 @@
         {
           "code": "au",
           "count": 1
+        },
+        {
+          "code": "tw",
+          "count": 1
         }
       ]
     },
@@ -85,7 +97,7 @@
       "countries": [
         {
           "code": "us",
-          "count": 1
+          "count": 4
         },
         {
           "code": "fr",
@@ -93,7 +105,7 @@
         },
         {
           "code": "in",
-          "count": 1
+          "count": 2
         }
       ]
     }
