@@ -12,7 +12,7 @@ import Player from "../types/player";
 import { useReducer, useState } from "react";
 import React from "react";
 
-export const LeaderboardTable = ({ data }) => {
+export const LeaderboardTable = ({ data }: { data: Player[] }) => {
   //   const rerender = useReducer(() => ({}), {})[1];
   const [sorting, setSorting] = useState<SortingState>([]);
   const columns = React.useMemo<ColumnDef<Player>[]>(
