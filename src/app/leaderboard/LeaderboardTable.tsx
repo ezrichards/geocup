@@ -2,14 +2,13 @@
 import {
   ColumnDef,
   SortingState,
-  createColumnHelper,
   getCoreRowModel,
   getSortedRowModel,
   flexRender,
   useReactTable,
 } from "@tanstack/react-table";
 import Player from "../types/player";
-import { useReducer, useState } from "react";
+import { useState } from "react";
 import React from "react";
 
 export const LeaderboardTable = ({ data }: { data: Player[] }) => {
