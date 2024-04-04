@@ -8,4 +8,12 @@ allowed and we're playing with 2 minute rounds on World. Everyone is welcome -- 
 
 The leaderboard will be updated everyday and the next day's link will be released shortly after. The winner gets something, idk.
 
-Results can be gathered from the API URL: `https://www.geoguessr.com/api/v3/results/highscores/GAME_CODE`
+## Loading Results
+
+To load data:
+- Save results from the API URL as json: `https://www.geoguessr.com/api/v3/results/highscores/GAME_CODE`
+- Put that file as `data.json` in the `stats` folder.
+- Run `python aggregate.py`
+
+Results will be in `totals-aggregated.json` - make sure this looks good, and then delete the old totals.json
+file and replace it with the new one.
