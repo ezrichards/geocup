@@ -1,19 +1,25 @@
-.flex-grid {
+.p-leaderboard {
   display: flex;
-  justify-content: space-between;
-}
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4dvh;
+  .flex-grid {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.col {
-  width: 32%;
-}
+  .col {
+    width: 32%;
+  }
 
-table {
-  table-layout: fixed;
-  border-collapse: collapse;
+  table {
+    table-layout: fixed;
+    border-collapse: collapse;
 
-  th,
-  td {
-    padding: 8px 12px;
-    border: 1px solid white;
+    th,
+    td {
+      padding: 8px 12px;
+      border: 1px solid white;
+    }
   }
 }

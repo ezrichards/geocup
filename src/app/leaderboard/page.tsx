@@ -13,7 +13,7 @@ export default function Home() {
   const data: Player[] = getResults();
 
   return (
-    <>
+    <div className="p-leaderboard">
       <h1>All Time Leaderboard</h1>
       <table>
         <tbody>
@@ -25,12 +25,10 @@ export default function Home() {
           </tr>
           {data.map((player: Player) => (
             <tr key={player.name}>
-              <React.Fragment key={player.name}>
-                <td>{player.name}</td>
-                <td>{player.totalPoints}</td>
-                <td>{player.totalTimeSeconds}</td>
-                {/* <td>{player.percentage}</td> */}
-              </React.Fragment>
+              <td>{player.name}</td>
+              <td>{player.totalPoints}</td>
+              <td>{player.totalTimeSeconds}</td>
+              {/* <td>{player.percentage}</td> */}
             </tr>
           ))}
         </tbody>
@@ -40,6 +38,6 @@ export default function Home() {
       <Link href="/">Go back to home</Link>
       {/* <div className="flex-grid"> */}
       {/* </div> */}
-    </>
+    </div>
   );
 }
