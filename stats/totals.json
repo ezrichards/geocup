@@ -2,20 +2,20 @@
   "totals": [
     {
       "name": "ethanzr",
-      "totalScore": 39576,
-      "totalTime": 1010,
+      "totalScore": 55978,
+      "totalTime": 1520,
       "perfects": 1
     },
     {
       "name": "Sumner Evans",
-      "totalScore": 33291,
-      "totalTime": 1197,
+      "totalScore": 51559,
+      "totalTime": 1785,
       "perfects": 0
     },
     {
       "name": "shane",
-      "totalScore": 34637,
-      "totalTime": 1188,
+      "totalScore": 48662,
+      "totalTime": 1746,
       "perfects": 0
     },
     {
@@ -28,6 +28,18 @@
       "name": "Dorian",
       "totalScore": 16995,
       "totalTime": 1190,
+      "perfects": 0
+    },
+    {
+      "name": "Byron Sharman",
+      "totalScore": 8211,
+      "totalTime": 589,
+      "perfects": 0
+    },
+    {
+      "name": "Kelly Dance",
+      "totalScore": 8036,
+      "totalTime": 491,
       "perfects": 0
     }
   ]
