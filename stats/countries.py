@@ -1,19 +1,21 @@
 import json
 
-from geopy.geocoders import Nominatim
-from geopy.exc import GeocoderTimedOut
+import requests
 
-def is_location_in_country(lat, lng, country_code):
-    geolocator = Nominatim(user_agent="geoapiExercises")
-    try:
-        location = geolocator.reverse((lat, lng), exactly_one=True)
-        if location.raw['address']['country_code'] == country_code.upper():
-            return True
-        else:
-            return False
-    except (KeyError, GeocoderTimedOut):
-        print("Error: Could not determine country for given location.")
-        return False
+# from geopy.geocoders import Nominatim
+# from geopy.exc import GeocoderTimedOut
+
+# def is_location_in_country(lat, lng, country_code):
+#     geolocator = Nominatim(user_agent="geoapiExercises")
+#     try:
+#         location = geolocator.reverse((lat, lng), exactly_one=True)
+#         if location.raw['address']['country_code'] == country_code.upper():
+#             return True
+#         else:
+#             return False
+#     except (KeyError, GeocoderTimedOut):
+#         print("Error: Could not determine country for given location.")
+#         return False
 
 # Given lat, lng, and streakLocationCode
 # lat = 46.970359802246094
