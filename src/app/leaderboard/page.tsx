@@ -1,11 +1,11 @@
 import "./page.scss";
 import React from "react";
 import Player from "../types/player";
-import getResults from "../parser/data";
+import { getCountries, getResults } from "../parser/data";
 import Link from "next/link";
-
-import { useReactTable, createColumnHelper } from "@tanstack/react-table";
 import { LeaderboardTable } from "./LeaderboardTable";
+import { CountryData } from "../types/country";
+import Image from "next/image";
 
 export const metadata = {
   title: "GeoCup Leaderboard",
@@ -14,13 +14,35 @@ export const metadata = {
 
 export default function Home() {
   const data: Player[] = getResults();
+  const countryData: CountryData[] = getCountries();
+
   return (
-    <div className="p-leaderboard">
-      <h1>All Time Leaderboard</h1>
-      <LeaderboardTable data={data} />
-      <br />
-      <Link href="/">Go back to home</Link>
-      {/* <img src="https://flagsapi.com/BE/flat/64.png"/> */}
-    </div>
+    <>
+      <div className="p-leaderboard">
+        <h1>All Time Leaderboard</h1>
+        <LeaderboardTable data={data} />
+        <br />
+        <Link href="/">Go back to home</Link>
+      </div>
+
+      <div className="p-leaderboard">
+        <h1>Country Leaderboard</h1>
+        <div className="flex-grid">
+          {countryData.map((country: any) => (
+            <div className="col" key={country[0]}>
+              <img
+                className="image"
+                src={`https://flagsapi.com/${country[0]}/flat/64.png`}
+                alt={`${country[0]} flag`}
+              />
+              <p>{country[0]}</p>
+              <p>
+                <strong>{country[1]}</strong>: {country[2]}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

@@ -1,8 +1,10 @@
 import fs from "fs";
 import results from "../../../stats/totals.json";
+import countries from "../../../stats/countries.json";
 import Player from "../types/player";
+import { Country, CountryData } from "../types/country";
 
-const getResults = () => {
+export const getResults = () => {
   const players: Player[] = [];
 
   // fs.readdirSync("games").forEach((file) => {
@@ -27,4 +29,21 @@ const getResults = () => {
   return players;
 };
 
-export default getResults;
+export const getCountries = () => {
+  const resultCountries: CountryData[] = [];
+
+  countries.countries.map((country: any) => {
+    const code = Object.keys(country)[0];
+    let maxPlayer = "";
+    let maxCount = 0;
+    country[Object.keys(country)[0]].map((countryPlayer: any) => {
+      if (countryPlayer.count > maxCount) {
+        maxPlayer = countryPlayer.name;
+        maxCount = countryPlayer.count;
+      }
+    });
+    resultCountries.push([code.toUpperCase(), maxPlayer, maxCount]);
+  });
+
+  return resultCountries;
+};
