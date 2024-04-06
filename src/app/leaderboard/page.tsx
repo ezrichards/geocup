@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import { useReactTable, createColumnHelper } from "@tanstack/react-table";
 import { LeaderboardTable } from "./LeaderboardTable";
+
 export const metadata = {
   title: "GeoCup Leaderboard",
   description: "The GeoCup Leaderboard",
@@ -19,6 +20,7 @@ export default function Home() {
       <LeaderboardTable data={data} />
       <br />
       <Link href="/">Go back to home</Link>
+      {/* <img src="https://flagsapi.com/BE/flat/64.png"/> */}
     </div>
   );
 }

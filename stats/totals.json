@@ -1,46 +1,46 @@
 {
-    "totals": [
-        {
-            "name": "ethanzr",
-            "totalScore": 73817,
-            "totalTime": 2108,
-            "perfects": 1
-        },
-        {
-            "name": "Sumner Evans",
-            "totalScore": 70888,
-            "totalTime": 2380,
-            "perfects": 0
-        },
-        {
-            "name": "shane",
-            "totalScore": 65546,
-            "totalTime": 2331,
-            "perfects": 0
-        },
-        {
-            "name": "Breadleaf",
-            "totalScore": 27029,
-            "totalTime": 886,
-            "perfects": 0
-        },
-        {
-            "name": "Dorian",
-            "totalScore": 16995,
-            "totalTime": 1190,
-            "perfects": 0
-        },
-        {
-            "name": "Byron Sharman",
-            "totalScore": 22254,
-            "totalTime": 1189,
-            "perfects": 0
-        },
-        {
-            "name": "Kelly Dance",
-            "totalScore": 56959,
-            "totalTime": 1892,
-            "perfects": 0
-        }
-    ]
+  "totals": [
+    {
+      "name": "ethanzr",
+      "totalScore": 73817,
+      "totalTime": 2108,
+      "perfects": 1
+    },
+    {
+      "name": "Sumner Evans",
+      "totalScore": 70888,
+      "totalTime": 2380,
+      "perfects": 0
+    },
+    {
+      "name": "shane",
+      "totalScore": 65546,
+      "totalTime": 2331,
+      "perfects": 0
+    },
+    {
+      "name": "Breadleaf",
+      "totalScore": 27029,
+      "totalTime": 886,
+      "perfects": 0
+    },
+    {
+      "name": "Dorian",
+      "totalScore": 16995,
+      "totalTime": 1190,
+      "perfects": 0
+    },
+    {
+      "name": "Byron Sharman",
+      "totalScore": 22254,
+      "totalTime": 1189,
+      "perfects": 0
+    },
+    {
+      "name": "Kelly Dance",
+      "totalScore": 56959,
+      "totalTime": 1892,
+      "perfects": 0
+    }
+  ]
 }

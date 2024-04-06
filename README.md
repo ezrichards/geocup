@@ -11,6 +11,7 @@ The leaderboard will be updated everyday and the next day's link will be release
 ## Loading Results
 
 To load data:
+
 - Save results from the API URL as json: `https://www.geoguessr.com/api/v3/results/highscores/GAME_CODE`
 - Put that file as `data.json` in the `stats` folder.
 - Run `python aggregate.py`
