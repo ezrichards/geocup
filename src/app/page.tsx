@@ -3,6 +3,7 @@ import Link from "next/link";
 import "./page.scss";
 import React from "react";
 import Day from "./types/day";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "GeoCup",
@@ -21,6 +22,8 @@ export default function Home() {
 
   return (
     <main className="p-home">
+      <Header />
+      
       <h1>GeoCup</h1>
       <div className="welcome">
         <p>

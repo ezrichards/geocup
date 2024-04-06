@@ -2,10 +2,9 @@ import "./page.scss";
 import React from "react";
 import Player from "../types/player";
 import { getCountries, getResults } from "../parser/data";
-import Link from "next/link";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { CountryData } from "../types/country";
-import Image from "next/image";
+import Header from "@/components/Header";
 
 export const metadata = {
   title: "GeoCup Leaderboard",
@@ -19,13 +18,11 @@ export default function Home() {
   return (
     <>
       <div className="p-leaderboard">
+        <Header />
+
         <h1>All Time Leaderboard</h1>
         <LeaderboardTable data={data} />
-        <br />
-        <Link href="/">Go back to home</Link>
-      </div>
 
-      <div className="p-leaderboard">
         <h1>Country Leaderboard</h1>
         <div className="flex-grid">
           {countryData.map((country: any) => (
