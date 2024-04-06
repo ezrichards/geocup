@@ -2,7 +2,7 @@ import fs from "fs";
 import results from "../../../stats/totals.json";
 import countries from "../../../stats/countries.json";
 import Player from "../types/player";
-import { Country } from "../types/country";
+import { Country, CountryData } from "../types/country";
 
 export const getResults = () => {
   const players: Player[] = [];
@@ -29,21 +29,20 @@ export const getResults = () => {
   return players;
 };
 
-// TODO structure countries better
 export const getCountries = () => {
-  const resultCountries: Country[] = [];
+  const resultCountries: CountryData[] = [];
 
-  // TODO fix any type
   countries.countries.map((country: any) => {
-    // console.log(country)
-
-    // const code = Object.keys(country)[0];
-    // console.log("CODE", code)
-
-    // TODO filter top person per country and put return as array of
-    // [ [code, player, count] ] ?
-
-    resultCountries.push(country);
+    const code = Object.keys(country)[0];
+    let maxPlayer = "";
+    let maxCount = 0;
+    country[Object.keys(country)[0]].map((countryPlayer: any) => {
+      if (countryPlayer.count > maxCount) {
+        maxPlayer = countryPlayer.name;
+        maxCount = countryPlayer.count;
+      }
+    });
+    resultCountries.push([code.toUpperCase(), maxPlayer, maxCount]);
   });
 
   return resultCountries;

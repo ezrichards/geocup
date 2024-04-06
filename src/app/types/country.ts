@@ -3,7 +3,8 @@ export interface CountryPlayer {
   count: number;
 }
 
-export interface Country {
-  id: string;
-  players: CountryPlayer[];
-}
+export type Country = {
+  [language: string]: CountryPlayer[];
+};
+
+export type CountryData = [string, string, number];

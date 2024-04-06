@@ -3,10 +3,9 @@ import React from "react";
 import Player from "../types/player";
 import { getCountries, getResults } from "../parser/data";
 import Link from "next/link";
-
-import { useReactTable, createColumnHelper } from "@tanstack/react-table";
 import { LeaderboardTable } from "./LeaderboardTable";
-import { Country } from "../types/country";
+import { CountryData } from "../types/country";
+import Image from "next/image";
 
 export const metadata = {
   title: "GeoCup Leaderboard",
@@ -15,34 +14,35 @@ export const metadata = {
 
 export default function Home() {
   const data: Player[] = getResults();
-  const countryData: Country[] = getCountries();
-
-  // countryData.map((country: any) => {
-  //   const { code } = country;
-  //   console.log("LOG:", code)
-  // })
+  const countryData: CountryData[] = getCountries();
 
   return (
-    <div className="p-leaderboard">
-      <h1>All Time Leaderboard</h1>
-      <LeaderboardTable data={data} />
-      <br />
-      <Link href="/">Go back to home</Link>
+    <>
+      <div className="p-leaderboard">
+        <h1>All Time Leaderboard</h1>
+        <LeaderboardTable data={data} />
+        <br />
+        <Link href="/">Go back to home</Link>
+      </div>
 
-      {countryData.map((country: any) => (
-        // TODO provide iterator key here once country code is unique
-        <>
-          {country[Object.keys(country)[0]].map((countryPlayer: any) => (
-            <>
+      <div className="p-leaderboard">
+        <h1>Country Leaderboard</h1>
+        <div className="flex-grid">
+          {countryData.map((country: any) => (
+            <div className="col" key={country[0]}>
               <img
-                src={`https://flagsapi.com/${Object.keys(country)[0].toUpperCase()}/flat/64.png`}
+                className="image"
+                src={`https://flagsapi.com/${country[0]}/flat/64.png`}
+                alt={`${country[0]} flag`}
               />
-              {countryPlayer.name} <br />
-              {countryPlayer.count}
-            </>
+              <p>{country[0]}</p>
+              <p>
+                <strong>{country[1]}</strong>: {country[2]}
+              </p>
+            </div>
           ))}
-        </>
-      ))}
-    </div>
+        </div>
+      </div>
+    </>
   );
 }
