@@ -3,12 +3,15 @@ import requests
 
 def is_location_in_country(lat, lon, locationCode):
     resp = requests.get(f'https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lon}')
-    return resp.json()['address']['country_code'] == locationCode
+    try:
+        return resp.json()['address']['country_code'] == locationCode
+    except KeyError:
+        return -1
 
 with open("countries.json", "r") as file:
     existing_data = json.load(file)
-
-    # print(existing_data)
+    if existing_data is None:
+        existing_data = { "countries": [] }
 
 users = []
 with open(input(), "r") as file:
@@ -29,13 +32,34 @@ with open(input(), "r") as file:
         print(f"Guesses for {playerName}:")
         guessNum = 1
         for guess in guesses:
-            print(f"    {rounds[guessNum]}", is_location_in_country(guess['lat'], guess['lng'], rounds[guessNum]))
+            country = rounds[guessNum]
+            correct = is_location_in_country(guess['lat'], guess['lng'], country)
+            if correct == -1:
+                print(f"    Couldn't reverse geocode for {playerName} on {country}..")
+                continue
+
+            print(f"    {country}", correct)
+            if correct:
+                country_found = False
+                for entry in existing_data["countries"]:
+                    if country in entry:
+                        for player_entry in entry[country]:
+                            if player_entry["name"] == playerName:
+                                player_entry["count"] += 1
+                                country_found = True
+                                break
+                        else:
+                            entry[country].append({"name": playerName, "count": 1})
+                            country_found = True
+                        break
+                if not country_found:
+                    existing_data["countries"].append({country: [{"name": playerName, "count": 1}]})
             guessNum += 1
         print()
 
 """
 {
-    countries: [
+    "countries": [
         "us": {
             {
                 name: 'ethanzr'
@@ -46,9 +70,9 @@ with open(input(), "r") as file:
 }
 """
 
-updated_data = {
-    "countries": []
-}
+# updated_data = {
+#     "countries": []
+# }
 
 with open("countries_updated.json", "w") as file:
-    json.dump(updated_data, file, indent=4)
+    json.dump(existing_data, file, indent=4)

@@ -1,6 +1,5 @@
 import fs from "fs";
 import results from "../../../stats/totals.json";
-// import results from "../../../games/apr1-VNW0sppUUiYr0xmz.json";
 import Player from "../types/player";
 
 const getResults = () => {

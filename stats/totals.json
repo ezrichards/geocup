@@ -1,52 +1,52 @@
 {
-    "totals": [
-        {
-            "name": "ethanzr",
-            "totalScore": 91118,
-            "totalTime": 2703,
-            "perfects": 1
-        },
-        {
-            "name": "Sumner Evans",
-            "totalScore": 85203,
-            "totalTime": 2972,
-            "perfects": 0
-        },
-        {
-            "name": "shane",
-            "totalScore": 73938,
-            "totalTime": 2931,
-            "perfects": 0
-        },
-        {
-            "name": "Breadleaf",
-            "totalScore": 27029,
-            "totalTime": 886,
-            "perfects": 0
-        },
-        {
-            "name": "Dorian",
-            "totalScore": 27487,
-            "totalTime": 1765,
-            "perfects": 0
-        },
-        {
-            "name": "Byron Sharman",
-            "totalScore": 37542,
-            "totalTime": 1789,
-            "perfects": 0
-        },
-        {
-            "name": "Kelly Dance",
-            "totalScore": 56959,
-            "totalTime": 1892,
-            "perfects": 0
-        },
-        {
-            "name": "JaydenP",
-            "totalScore": 8327,
-            "totalTime": 423,
-            "perfects": 0
-        }
-    ]
+  "totals": [
+    {
+      "name": "ethanzr",
+      "totalScore": 91118,
+      "totalTime": 2703,
+      "perfects": 1
+    },
+    {
+      "name": "Sumner Evans",
+      "totalScore": 85203,
+      "totalTime": 2972,
+      "perfects": 0
+    },
+    {
+      "name": "shane",
+      "totalScore": 73938,
+      "totalTime": 2931,
+      "perfects": 0
+    },
+    {
+      "name": "Breadleaf",
+      "totalScore": 27029,
+      "totalTime": 886,
+      "perfects": 0
+    },
+    {
+      "name": "Dorian",
+      "totalScore": 27487,
+      "totalTime": 1765,
+      "perfects": 0
+    },
+    {
+      "name": "Byron Sharman",
+      "totalScore": 37542,
+      "totalTime": 1789,
+      "perfects": 0
+    },
+    {
+      "name": "Kelly Dance",
+      "totalScore": 56959,
+      "totalTime": 1892,
+      "perfects": 0
+    },
+    {
+      "name": "JaydenP",
+      "totalScore": 8327,
+      "totalTime": 423,
+      "perfects": 0
+    }
+  ]
 }

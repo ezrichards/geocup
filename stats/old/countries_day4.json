@@ -60,7 +60,7 @@
       "us": [
         {
           "name": "ethanzr",
-          "count": 6
+          "count": 5
         },
         {
           "name": "Kelly Dance",
@@ -68,11 +68,11 @@
         },
         {
           "name": "Sumner Evans",
-          "count": 8
+          "count": 7
         },
         {
           "name": "shane",
-          "count": 8
+          "count": 7
         },
         {
           "name": "Breadleaf",
@@ -80,15 +80,11 @@
         },
         {
           "name": "Dorian",
-          "count": 7
+          "count": 6
         },
         {
           "name": "Byron Sharman",
-          "count": 3
-        },
-        {
-          "name": "JaydenP",
-          "count": 1
+          "count": 2
         }
       ]
     },
@@ -184,22 +180,14 @@
       "id": [
         {
           "name": "Sumner Evans",
-          "count": 2
+          "count": 1
         },
         {
           "name": "ethanzr",
-          "count": 2
+          "count": 1
         },
         {
           "name": "shane",
-          "count": 1
-        },
-        {
-          "name": "Byron Sharman",
-          "count": 1
-        },
-        {
-          "name": "Dorian",
           "count": 1
         }
       ]
@@ -228,11 +216,11 @@
       "br": [
         {
           "name": "Sumner Evans",
-          "count": 2
+          "count": 1
         },
         {
           "name": "ethanzr",
-          "count": 2
+          "count": 1
         },
         {
           "name": "shane",
@@ -240,42 +228,6 @@
         },
         {
           "name": "Kelly Dance",
-          "count": 1
-        },
-        {
-          "name": "Byron Sharman",
-          "count": 1
-        },
-        {
-          "name": "Dorian",
-          "count": 1
-        },
-        {
-          "name": "JaydenP",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "mk": [
-        {
-          "name": "ethanzr",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "pl": [
-        {
-          "name": "ethanzr",
-          "count": 1
-        },
-        {
-          "name": "Byron Sharman",
-          "count": 1
-        },
-        {
-          "name": "Sumner Evans",
           "count": 1
         }
       ]
