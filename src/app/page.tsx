@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <main className="p-home">
       <Header />
-      
+
       <h1>GeoCup</h1>
       <div className="welcome">
         <p>
