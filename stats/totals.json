@@ -2,20 +2,20 @@
   "totals": [
     {
       "name": "ethanzr",
-      "totalScore": 91118,
-      "totalTime": 2703,
+      "totalScore": 104961,
+      "totalTime": 3303,
       "perfects": 1
     },
     {
       "name": "Sumner Evans",
-      "totalScore": 85203,
-      "totalTime": 2972,
+      "totalScore": 103010,
+      "totalTime": 3572,
       "perfects": 0
     },
     {
       "name": "shane",
-      "totalScore": 73938,
-      "totalTime": 2931,
+      "totalScore": 94844,
+      "totalTime": 3531,
       "perfects": 0
     },
     {
@@ -32,20 +32,26 @@
     },
     {
       "name": "Byron Sharman",
-      "totalScore": 37542,
-      "totalTime": 1789,
+      "totalScore": 54086,
+      "totalTime": 2389,
       "perfects": 0
     },
     {
       "name": "Kelly Dance",
-      "totalScore": 56959,
-      "totalTime": 1892,
+      "totalScore": 78058,
+      "totalTime": 2374,
       "perfects": 0
     },
     {
       "name": "JaydenP",
       "totalScore": 8327,
       "totalTime": 423,
+      "perfects": 0
+    },
+    {
+      "name": "Tyler Wright",
+      "totalScore": 12545,
+      "totalTime": 267,
       "perfects": 0
     }
   ]
