@@ -28,6 +28,7 @@ export const CountryLeaderboards = ({
   countryResultsArray: [string, CountryResult][];
 }) => {
   const [isAvg, setIsAvg] = useState<boolean>(true);
+  const [focusedCountry, setFocusedCountry] = useState<string | null>(null);
   return (
     <div className="c-country-leaderboard">
       <div className="settings">
@@ -51,6 +52,9 @@ export const CountryLeaderboards = ({
                   "--img-url": `url(https://flagsapi.com/${country.toUpperCase()}/flat/64.png)`,
                 } as React.CSSProperties
               }
+              onClick={() => {
+                setFocusedCountry((old) => (old === country ? null : country));
+              }}
             >
               {/* Total points in country{result.totalPoints.toFixed(0)} */}
               <img
@@ -61,7 +65,7 @@ export const CountryLeaderboards = ({
               <p>{country.toUpperCase()}</p>
               {Array.from(result.players.entries())
                 .toSorted(sortByScore(isAvg))
-                .slice(0, 3)
+                .slice(0, focusedCountry === country ? undefined : 3)
                 .map(([playerName, player], index) => (
                   <div key={playerName}>
                     {getEmoji(index)} {playerName} -{" "}
