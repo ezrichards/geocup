@@ -13,7 +13,9 @@ import React from "react";
 
 export const LeaderboardTable = ({ data }: { data: Player[] }) => {
   //   const rerender = useReducer(() => ({}), {})[1];
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([
+    { id: "totalPoints", desc: true },
+  ]);
   const columns = React.useMemo<ColumnDef<Player>[]>(
     () => [
       {
