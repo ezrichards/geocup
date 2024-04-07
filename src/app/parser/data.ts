@@ -6,7 +6,7 @@ import { CountryData } from "../types/country";
 
 export const getResults = () => {
   const players: Player[] = [];
-  const DAYS_PLAYED = fs.readdirSync("games").length;
+  const DAYS_PLAYED = fs.readdirSync("games").length - 1;
 
   results.totals.map((item: any) =>
     players.push({
