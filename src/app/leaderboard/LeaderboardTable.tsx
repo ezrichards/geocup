@@ -34,6 +34,11 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
         header: "Total Time (sec)",
         footer: (props) => props.column.id,
       },
+      {
+        accessorFn: (row) => row.percentage,
+        header: "Accuracy",
+        footer: (props) => props.column.id,
+      },
     ],
     [],
   );

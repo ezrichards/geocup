@@ -2,28 +2,21 @@ import fs from "fs";
 import results from "../../../stats/totals.json";
 import countries from "../../../stats/countries.json";
 import Player from "../types/player";
-import { Country, CountryData } from "../types/country";
+import { CountryData } from "../types/country";
 
 export const getResults = () => {
   const players: Player[] = [];
+  const DAYS_PLAYED = fs.readdirSync("games").length;
 
-  // fs.readdirSync("games").forEach((file) => {
-  //   const results = import(`../../../games/${file}`);
-  //   console.log(results);
-  // });
-
-  // TODO fix this any type
   results.totals.map((item: any) =>
     players.push({
       name: item.name,
       totalPoints: Number(item.totalScore),
       totalTimeSeconds: Number(item.totalTime),
-      percentage: Number(0),
-      // id: item.userId,
-      // name: item.playerName,
-      // totalPoints: Number(item.game.player.totalScore.amount),
-      // totalTimeSeconds: Number(item.game.player.totalTime),
-      // percentage: Number(item.game.player.totalScore.percentage),
+      percentage:
+        String(
+          Math.round(Number(item.totalScore / (25000 * DAYS_PLAYED)) * 100),
+        ) + "%",
     }),
   );
   return players;
