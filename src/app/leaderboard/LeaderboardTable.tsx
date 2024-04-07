@@ -47,7 +47,7 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
         },
       },
     ],
-    []
+    [],
   );
 
   const table = useReactTable({
@@ -83,14 +83,14 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
                           ? header.column.getNextSortingOrder() === "asc"
                             ? "Sort ascending"
                             : header.column.getNextSortingOrder() === "desc"
-                            ? "Sort descending"
-                            : "Clear sort"
+                              ? "Sort descending"
+                              : "Clear sort"
                           : undefined
                       }
                     >
                       {flexRender(
                         header.column.columnDef.header,
-                        header.getContext()
+                        header.getContext(),
                       )}
                       {{
                         asc: " 🔼",
@@ -116,7 +116,7 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
                     <td key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext()
+                        cell.getContext(),
                       )}
                     </td>
                   );

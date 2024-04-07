@@ -6,20 +6,20 @@ const sortByScore = (avg: boolean) => {
   if (avg) {
     return (
       [, playerA]: [string, TotalPlayer],
-      [, playerB]: [string, TotalPlayer]
+      [, playerB]: [string, TotalPlayer],
     ) =>
       playerB.totalPoints / playerB.totalGamesPlayed -
       playerA.totalPoints / playerA.totalGamesPlayed;
   }
   return (
     [, playerA]: [string, TotalPlayer],
-    [, playerB]: [string, TotalPlayer]
+    [, playerB]: [string, TotalPlayer],
   ) => playerB.totalPoints - playerA.totalPoints;
 };
 
 const countrySort = (
   [, countryA]: [string, CountryResult],
-  [, countryB]: [string, CountryResult]
+  [, countryB]: [string, CountryResult],
 ) => countryB.totalPoints - countryA.totalPoints;
 
 export const CountryLeaderboards = ({
@@ -71,7 +71,7 @@ export const CountryLeaderboards = ({
                     {getEmoji(index)} {playerName} -{" "}
                     {isAvg
                       ? (player.totalPoints / player.totalGamesPlayed).toFixed(
-                          0
+                          0,
                         )
                       : player.totalPoints.toFixed(0)}
                     {/* {playerName}: Score - {player.totalPoints}, Distance -{" "}
