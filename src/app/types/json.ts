@@ -180,7 +180,7 @@ export interface AwardedXp {
   xpAwards: XpAward[];
 }
 
-export interface XpAward {
+interface XpAward {
   xp: number;
   reason: string;
   count: number;
