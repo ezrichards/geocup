@@ -1,11 +1,10 @@
 import "./page.scss";
 import React from "react";
 import Player from "../types/player";
-import { getCountries, getResults } from "../parser/data";
+import { getCountries, getResults, getResultsByCountry } from "../parser/data";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { CountryData } from "../types/country";
 import Header from "@/components/Header";
-
 export const metadata = {
   title: "GeoCup Leaderboard",
   description: "The GeoCup Leaderboard",
@@ -14,10 +13,29 @@ export const metadata = {
 export default function Home() {
   const data: Player[] = getResults();
   const countryData: CountryData[] = getCountries();
-
+  const countryResults = getResultsByCountry();
+  const countryResultsArray = Array.from(countryResults.entries());
   return (
     <>
       <div className="p-leaderboard">
+        <div>
+          {countryResultsArray.map(([country, result]) => (
+            <div key={country}>
+              <h2>{country}</h2>
+              <ul>
+                {Array.from(result.players.entries()).map(
+                  ([playerName, player]) => (
+                    <li key={playerName}>
+                      {playerName}: Score - {player.totalPoints}, Distance -{" "}
+                      {player.totalDistance} meters, Time -{" "}
+                      {player.totalTimeSeconds} seconds
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          ))}
+        </div>
         <Header />
 
         <h1>All Time Leaderboard</h1>
