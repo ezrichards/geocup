@@ -3,5 +3,4 @@ export default interface Player {
   totalPoints: number;
   totalTimeSeconds: number;
   percentage: string;
-  gamesPlayed?: number;
 }

@@ -23,7 +23,7 @@ export const getResults = () => {
   return players;
 };
 
-type TotalPlayer = {
+export type TotalPlayer = {
   name: string;
   totalPoints: number;
   totalTimeSeconds: number;
