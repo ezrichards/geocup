@@ -2,9 +2,9 @@
   margin-top: 16px;
   .flex-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 16px;
-    max-width: 1000px;
+    max-width: min(1400px, 100vw);
   }
 
   .card {
