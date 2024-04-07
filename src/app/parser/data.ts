@@ -32,8 +32,9 @@ export type TotalPlayer = {
   totalGamesPlayed: number;
 };
 
-type CountryResult = {
+export type CountryResult = {
   country: string;
+  totalPoints: number;
   players: Map<string, TotalPlayer>;
 };
 
@@ -46,9 +47,8 @@ export const getResultsByCountry = () => {
       fs.readFileSync(`games/${file}`, { encoding: "utf-8" })
     );
     const items = data.items;
-
+    //loop over each player
     items.forEach((item) => {
-      // Assuming dynamic structure; replace any with a more specific type if possible
       const rounds = item.game.rounds;
 
       rounds.forEach((round, roundNumber: number) => {
@@ -61,16 +61,25 @@ export const getResultsByCountry = () => {
         if (!resultsByCountry.has(country)) {
           resultsByCountry.set(country, {
             country,
+            totalPoints: 0,
             players: new Map<string, TotalPlayer>(),
           });
         }
 
         const countryResult = resultsByCountry.get(country)!;
+
         const playerName = item.playerName;
         const disMeters = Number(guess.distance.meters.amount);
         const score = Number(guess.roundScore.amount);
         const time = guess.time;
         const percentage = guess.roundScore.percentage;
+
+        //add points to the total country points
+        resultsByCountry.set(country, {
+          ...countryResult,
+          totalPoints: countryResult.totalPoints + score,
+        });
+
         // Initialize the player in the country if it doesn't exist
         if (!countryResult.players.has(playerName)) {
           countryResult.players.set(playerName, {
@@ -82,9 +91,8 @@ export const getResultsByCountry = () => {
             totalGamesPlayed: 1,
           });
         } else {
-          // Update existing player stats
+          // increment player stats
           const p = countryResult.players.get(playerName)!;
-          // Update other stats as necessary
           countryResult.players.set(playerName, {
             ...p,
             totalPoints: p.totalPoints + score,

@@ -1,5 +1,7 @@
-import { TotalPlayer, getResultsByCountry } from "../parser/data";
-
+"use client";
+import { useState } from "react";
+import { CountryResult, TotalPlayer } from "../parser/data";
+import "./CountryLeaderboards.scss";
 const sortByScore = (avg: boolean) => {
   if (avg) {
     return (
@@ -15,33 +17,68 @@ const sortByScore = (avg: boolean) => {
   ) => playerB.totalPoints - playerA.totalPoints;
 };
 
-export const CountryLeaderboards = () => {
-  const countryResults = getResultsByCountry();
-  const countryResultsArray = Array.from(countryResults.entries());
+const countrySort = (
+  [, countryA]: [string, CountryResult],
+  [, countryB]: [string, CountryResult]
+) => countryB.totalPoints - countryA.totalPoints;
+
+export const CountryLeaderboards = ({
+  countryResultsArray,
+}: {
+  countryResultsArray: [string, CountryResult][];
+}) => {
+  const [isAvg, setIsAvg] = useState<boolean>(true);
   return (
-    <div className="c-country-leaderboard flex-grid">
-      {countryResultsArray.map(([country, result]) => (
-        <div key={country}>
-          <div className="col">
-            <img
-              className="image"
-              src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
-              alt={`${country} flag`}
-            />
-            <p>{country}</p>
-            {Array.from(result.players.entries())
-              .toSorted(sortByScore(true))
-              .map(([playerName, player], index) => (
-                <div key={playerName}>
-                  {getEmoji(index)} {playerName}
-                  {/* {playerName}: Score - {player.totalPoints}, Distance -{" "}
+    <div className="c-country-leaderboard">
+      <div className="settings">
+        <p>
+          Currently showing{" "}
+          {isAvg ? "Average Score Leaderboard" : "All Time Leaderboard"}{" "}
+          <button onClick={() => setIsAvg((old) => !old)}>
+            {isAvg
+              ? "Show All Time Leaderboard"
+              : "Show Average Score Leaderboard"}
+          </button>
+        </p>
+      </div>
+      <div className="flex-grid">
+        {countryResultsArray.toSorted(countrySort).map(([country, result]) => (
+          <div key={country}>
+            <div
+              className="card"
+              style={
+                {
+                  "--img-url": `url(https://flagsapi.com/${country.toUpperCase()}/flat/64.png)`,
+                } as React.CSSProperties
+              }
+            >
+              {/* Total points in country{result.totalPoints.toFixed(0)} */}
+              <img
+                className="image"
+                src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
+                alt={`${country} flag`}
+              />
+              <p>{country.toUpperCase()}</p>
+              {Array.from(result.players.entries())
+                .toSorted(sortByScore(isAvg))
+                .slice(0, 3)
+                .map(([playerName, player], index) => (
+                  <div key={playerName}>
+                    {getEmoji(index)} {playerName} -{" "}
+                    {isAvg
+                      ? (player.totalPoints / player.totalGamesPlayed).toFixed(
+                          0
+                        )
+                      : player.totalPoints.toFixed(0)}
+                    {/* {playerName}: Score - {player.totalPoints}, Distance -{" "}
                   {player.totalDistance} meters, Time -{" "}
                   {player.totalTimeSeconds} seconds */}
-                </div>
-              ))}
+                  </div>
+                ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -14,6 +14,9 @@ export const metadata = {
 export default function Home() {
   const data: Player[] = getResults();
   const countryData: CountryData[] = getCountries();
+
+  const countryResults = getResultsByCountry();
+  const countryResultsArray = Array.from(countryResults.entries());
   return (
     <>
       <div className="p-leaderboard">
@@ -23,7 +26,7 @@ export default function Home() {
         <LeaderboardTable data={data} />
 
         <h1>Country Leaderboard</h1>
-        <CountryLeaderboards />
+        <CountryLeaderboards countryResultsArray={countryResultsArray} />
         {/* <div className="flex-grid">
           {countryData.map((country: any) => (
             <div className="col" key={country[0]}>
