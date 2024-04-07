@@ -1,21 +1,27 @@
 {
   "totals": [
     {
+      "name": "shane",
+      "totalScore": 94844,
+      "totalTime": 3531,
+      "perfects": 0
+    },
+    {
       "name": "ethanzr",
       "totalScore": 104961,
-      "totalTime": 3303,
-      "perfects": 1
+      "totalTime": 3333,
+      "perfects": 0
+    },
+    {
+      "name": "Kelly Dance",
+      "totalScore": 78058,
+      "totalTime": 2374,
+      "perfects": 0
     },
     {
       "name": "Sumner Evans",
       "totalScore": 103010,
       "totalTime": 3572,
-      "perfects": 0
-    },
-    {
-      "name": "shane",
-      "totalScore": 94844,
-      "totalTime": 3531,
       "perfects": 0
     },
     {
@@ -26,8 +32,8 @@
     },
     {
       "name": "Dorian",
-      "totalScore": 27487,
-      "totalTime": 1765,
+      "totalScore": 42259,
+      "totalTime": 2298,
       "perfects": 0
     },
     {
@@ -37,21 +43,15 @@
       "perfects": 0
     },
     {
-      "name": "Kelly Dance",
-      "totalScore": 78058,
-      "totalTime": 2374,
+      "name": "Tyler Wright",
+      "totalScore": 12545,
+      "totalTime": 267,
       "perfects": 0
     },
     {
       "name": "JaydenP",
       "totalScore": 8327,
       "totalTime": 423,
-      "perfects": 0
-    },
-    {
-      "name": "Tyler Wright",
-      "totalScore": 12545,
-      "totalTime": 267,
       "perfects": 0
     }
   ]

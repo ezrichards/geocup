@@ -1,5 +1,4 @@
 # gpt wrote this lol
-
 import json
 
 # Load existing player information from totals.json
@@ -47,5 +46,5 @@ updated_data = {
 }
 
 # Save the updated data to totals_updated.json
-with open("totals_updated.json", "w") as file:
+with open("totals.json", "w") as file:
     json.dump(updated_data, file, indent=4)
