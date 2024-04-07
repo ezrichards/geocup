@@ -17,6 +17,7 @@ export const getResults = () => {
         String(
           Math.round(Number(item.totalScore / (25000 * DAYS_PLAYED)) * 100),
         ) + "%",
+      perfectGames: item.perfects,
     }),
   );
   return players;
