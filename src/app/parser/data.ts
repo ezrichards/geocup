@@ -7,7 +7,7 @@ import { Root } from "../types/json";
 
 export const getResults = () => {
   const players: Player[] = [];
-  const DAYS_PLAYED = fs.readdirSync("games").length;
+  const DAYS_PLAYED = fs.readdirSync("games").length - 1;
 
   results.totals.map((item: any) =>
     players.push({
@@ -18,6 +18,7 @@ export const getResults = () => {
         String(
           Math.round(Number(item.totalScore / (25000 * DAYS_PLAYED)) * 100),
         ) + "%",
+      perfectGames: item.perfects,
     }),
   );
   return players;

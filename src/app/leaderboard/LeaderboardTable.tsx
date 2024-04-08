@@ -46,6 +46,11 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
           return aNum - bNum;
         },
       },
+      {
+        accessorFn: (row) => row.perfectGames,
+        header: "5ks",
+        footer: (props) => props.column.id,
+      },
     ],
     [],
   );
