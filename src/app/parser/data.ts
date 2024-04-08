@@ -76,20 +76,20 @@ export const getResultsByCountry = () => {
         const score = Number(guess.roundScore.amount);
         const time = guess.time;
         const percentage = guess.roundScore.percentage;
-        //check if the coordinates are in the country
-        //if so, add the points to the total country points
+        // check if the coordinates are in the country
+        // if not the player gets 0 country points
         const correctCountry = iso1A2Code([round.lng, round.lat]);
         const guessCountry = iso1A2Code([guess.lng, guess.lat]);
-        const correctCountryPoints = correctCountry === country ? score : 0;
+        const correctCountryPoints =
+          correctCountry === guessCountry ? score : 0;
 
-        //add points to the total country points
+        // add all players points to the country (for sorting countries by total points)
         resultsByCountry.set(country, {
           ...countryResult,
           totalPoints: countryResult.totalPoints + score,
         });
 
         // Initialize the player in the country if it doesn't exist
-
         if (!countryResult.players.has(playerName)) {
           countryResult.players.set(playerName, {
             name: playerName,

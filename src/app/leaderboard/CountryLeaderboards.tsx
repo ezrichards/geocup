@@ -2,24 +2,10 @@
 import { useState } from "react";
 import { CountryResult, TotalPlayer } from "../parser/data";
 import "./CountryLeaderboards.scss";
-const sortByScore = (avg: boolean) => {
-  if (avg) {
-    return (
-      [, playerA]: [string, TotalPlayer],
-      [, playerB]: [string, TotalPlayer],
-    ) =>
-      playerB.totalPoints / playerB.totalGamesPlayed -
-      playerA.totalPoints / playerA.totalGamesPlayed;
-  }
-  return (
-    [, playerA]: [string, TotalPlayer],
-    [, playerB]: [string, TotalPlayer],
-  ) => playerB.totalPoints - playerA.totalPoints;
-};
 
 const countrySort = (
   [, countryA]: [string, CountryResult],
-  [, countryB]: [string, CountryResult],
+  [, countryB]: [string, CountryResult]
 ) => countryB.totalPoints - countryA.totalPoints;
 
 export const CountryLeaderboards = ({
@@ -28,7 +14,25 @@ export const CountryLeaderboards = ({
   countryResultsArray: [string, CountryResult][];
 }) => {
   const [isAvg, setIsAvg] = useState<boolean>(true);
+  const [isStrictCountry, setIsStrictCountry] = useState<boolean>(true);
   const [focusedCountry, setFocusedCountry] = useState<string | null>(null);
+  //function for calculating the player's score based on state
+  const getPlayerPoints = (player: TotalPlayer): number => {
+    const totalPoints = isStrictCountry
+      ? player.totalCorrectCountryPoints
+      : player.totalPoints;
+    const scoreValue = isAvg
+      ? totalPoints / player.totalGamesPlayed
+      : totalPoints;
+    return scoreValue;
+  };
+  const sortByScore = (avg: boolean) => {
+    return (
+      [, playerA]: [string, TotalPlayer],
+      [, playerB]: [string, TotalPlayer]
+    ) => getPlayerPoints(playerB) - getPlayerPoints(playerA);
+  };
+
   return (
     <div className="c-country-leaderboard">
       <div className="settings">
@@ -39,6 +43,16 @@ export const CountryLeaderboards = ({
             {isAvg
               ? "Show All Time Leaderboard"
               : "Show Average Score Leaderboard"}
+          </button>
+        </p>
+        <p>
+          {isStrictCountry
+            ? "Counting incorrect country guesses as 0 points"
+            : "Counting all guesses"}{" "}
+          <button onClick={() => setIsStrictCountry((old) => !old)}>
+            {isStrictCountry
+              ? "Count All Guesses"
+              : "Count Incorrect Country Guesses as 0 Points"}
           </button>
         </p>
       </div>
@@ -66,19 +80,16 @@ export const CountryLeaderboards = ({
               {Array.from(result.players.entries())
                 .toSorted(sortByScore(isAvg))
                 .slice(0, focusedCountry === country ? undefined : 3)
-                .map(([playerName, player], index) => (
-                  <div key={playerName}>
-                    {getEmoji(index)} {playerName} -{" "}
-                    {isAvg
-                      ? (player.totalPoints / player.totalGamesPlayed).toFixed(
-                          0,
-                        )
-                      : player.totalPoints.toFixed(0)}
-                    {/* {playerName}: Score - {player.totalPoints}, Distance -{" "}
-                  {player.totalDistance} meters, Time -{" "}
-                  {player.totalTimeSeconds} seconds */}
-                  </div>
-                ))}
+                .map(([playerName, player], index) => {
+                  const pointsDisplay = getPlayerPoints(player);
+                  if (pointsDisplay === 0) return null;
+                  return (
+                    <div key={playerName}>
+                      {getEmoji(index)} {playerName} -{" "}
+                      {pointsDisplay.toFixed(0)}
+                    </div>
+                  );
+                })}
             </div>
           </div>
         ))}
