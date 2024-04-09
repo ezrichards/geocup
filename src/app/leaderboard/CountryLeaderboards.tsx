@@ -71,25 +71,30 @@ export const CountryLeaderboards = ({
               }}
             >
               {/* Total points in country{result.totalPoints.toFixed(0)} */}
-              <img
-                className="image"
-                src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
-                alt={`${country} flag`}
-              />
-              <p>{country.toUpperCase()}</p>
-              {Array.from(result.players.entries())
-                .toSorted(sortByScore(isAvg))
-                .slice(0, focusedCountry === country ? undefined : 3)
-                .map(([playerName, player], index) => {
-                  const pointsDisplay = getPlayerPoints(player);
-                  if (pointsDisplay === 0) return null;
-                  return (
-                    <div key={playerName}>
-                      {getEmoji(index)} {playerName} -{" "}
-                      {pointsDisplay.toFixed(0)}
-                    </div>
-                  );
-                })}
+              <div className="country-img">
+                <img
+                  className="image"
+                  src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
+                  alt={`${country} flag`}
+                />
+                <p>{country.toUpperCase()}</p>
+              </div>
+              <div className="mini-leaderboard">
+                {Array.from(result.players.entries())
+                  .toSorted(sortByScore(isAvg))
+                  .slice(0, focusedCountry === country ? undefined : 3)
+                  .map(([playerName, player], index) => {
+                    const pointsDisplay = getPlayerPoints(player);
+                    if (pointsDisplay === 0) return null;
+                    return (
+                      <div className="podium-winner" key={playerName}>
+                        <div className="emoji">{getEmoji(index)}</div>
+                        <div className="player">{playerName}</div>
+                        <div className="score">{pointsDisplay.toFixed(0)}</div>
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
           </div>
         ))}
