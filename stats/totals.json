@@ -1,58 +1,64 @@
 {
-  "totals": [
-    {
-      "name": "shane",
-      "totalScore": 114696,
-      "totalTime": 4131,
-      "perfects": 0
-    },
-    {
-      "name": "ethanzr",
-      "totalScore": 126103,
-      "totalTime": 3922,
-      "perfects": 2
-    },
-    {
-      "name": "Kelly Dance",
-      "totalScore": 95523,
-      "totalTime": 2813,
-      "perfects": 0
-    },
-    {
-      "name": "Sumner Evans",
-      "totalScore": 121264,
-      "totalTime": 4172,
-      "perfects": 0
-    },
-    {
-      "name": "Breadleaf",
-      "totalScore": 27029,
-      "totalTime": 886,
-      "perfects": 0
-    },
-    {
-      "name": "Dorian",
-      "totalScore": 42259,
-      "totalTime": 2298,
-      "perfects": 0
-    },
-    {
-      "name": "Byron Sharman",
-      "totalScore": 70586,
-      "totalTime": 2989,
-      "perfects": 0
-    },
-    {
-      "name": "Tyler Wright",
-      "totalScore": 12545,
-      "totalTime": 267,
-      "perfects": 0
-    },
-    {
-      "name": "JaydenP",
-      "totalScore": 8327,
-      "totalTime": 423,
-      "perfects": 0
-    }
-  ]
+    "totals": [
+        {
+            "name": "shane",
+            "totalScore": 133682,
+            "totalTime": 4731,
+            "perfects": 0
+        },
+        {
+            "name": "ethanzr",
+            "totalScore": 143140,
+            "totalTime": 4505,
+            "perfects": 2
+        },
+        {
+            "name": "Kelly Dance",
+            "totalScore": 113773,
+            "totalTime": 3340,
+            "perfects": 1
+        },
+        {
+            "name": "Sumner Evans",
+            "totalScore": 121264,
+            "totalTime": 4172,
+            "perfects": 0
+        },
+        {
+            "name": "Breadleaf",
+            "totalScore": 27029,
+            "totalTime": 886,
+            "perfects": 0
+        },
+        {
+            "name": "Dorian",
+            "totalScore": 42259,
+            "totalTime": 2298,
+            "perfects": 0
+        },
+        {
+            "name": "Byron Sharman",
+            "totalScore": 81294,
+            "totalTime": 3571,
+            "perfects": 0
+        },
+        {
+            "name": "Tyler Wright",
+            "totalScore": 12545,
+            "totalTime": 267,
+            "perfects": 0
+        },
+        {
+            "name": "JaydenP",
+            "totalScore": 8327,
+            "totalTime": 423,
+            "perfects": 0
+        },
+        {
+            "name": "Trung \u0110\u1eb7ng \u0110o\u00e0n \u0110\u1ee9c",
+            "totalScore": 15256,
+            "totalTime": 421,
+            "perfects": 0
+        }
+    ]
 }
