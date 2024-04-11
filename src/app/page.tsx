@@ -14,7 +14,7 @@ export default function Home() {
   const games: Day[] = [];
 
   var daysPlayed = 1;
-  fs.readdirSync("games").forEach((file, index) => {
+  fs.readdirSync("games").forEach((file) => {
     if (file.includes("-")) {
       games.push({
         code: file.split("-")[1].split(".")[0],
