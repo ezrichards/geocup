@@ -1,7 +1,9 @@
 export default interface Player {
   name: string;
   totalPoints: number;
+  totalDistance: number;
   totalTimeSeconds: number;
-  percentage: string;
+  totalPercentage: number;
   perfectGames: number;
+  totalGamesPlayed: number;
 }

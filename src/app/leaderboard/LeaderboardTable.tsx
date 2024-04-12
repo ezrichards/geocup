@@ -37,14 +37,10 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
         footer: (props) => props.column.id,
       },
       {
-        accessorFn: (row) => row.percentage,
+        accessorFn: (row) => row.totalPercentage / row.totalGamesPlayed,
+        cell: (info) => `${Number(info.getValue()).toFixed(0)}%`,
         header: "Accuracy",
         footer: (props) => props.column.id,
-        sortingFn: (a, b, colId) => {
-          const aNum = Number((a.getValue(colId) as string).slice(0, -1));
-          const bNum = Number((b.getValue(colId) as string).slice(0, -1));
-          return aNum - bNum;
-        },
       },
       {
         accessorFn: (row) => row.perfectGames,
@@ -52,7 +48,7 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
         footer: (props) => props.column.id,
       },
     ],
-    [],
+    []
   );
 
   const table = useReactTable({
@@ -88,14 +84,14 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
                           ? header.column.getNextSortingOrder() === "asc"
                             ? "Sort ascending"
                             : header.column.getNextSortingOrder() === "desc"
-                              ? "Sort descending"
-                              : "Clear sort"
+                            ? "Sort descending"
+                            : "Clear sort"
                           : undefined
                       }
                     >
                       {flexRender(
                         header.column.columnDef.header,
-                        header.getContext(),
+                        header.getContext()
                       )}
                       {{
                         asc: " 🔼",
@@ -121,7 +117,7 @@ export const LeaderboardTable = ({ data }: { data: Player[] }) => {
                     <td key={cell.id}>
                       {flexRender(
                         cell.column.columnDef.cell,
-                        cell.getContext(),
+                        cell.getContext()
                       )}
                     </td>
                   );
