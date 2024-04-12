@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rapideditor/country-coder": "^5.2.2",
     "@tanstack/react-table": "^8.15.3",
     "next": "14.1.4",
     "react": "^18",

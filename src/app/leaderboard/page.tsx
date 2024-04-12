@@ -1,11 +1,11 @@
 import "./page.scss";
 import React from "react";
 import Player from "../types/player";
-import { getCountries, getResults } from "../parser/data";
+import { getCountries, getResults, getResultsByCountry } from "../parser/data";
 import { LeaderboardTable } from "./LeaderboardTable";
 import { CountryData } from "../types/country";
 import Header from "@/components/Header";
-
+import { CountryLeaderboards } from "./CountryLeaderboards";
 export const metadata = {
   title: "GeoCup Leaderboard",
   description: "The GeoCup Leaderboard",
@@ -15,6 +15,8 @@ export default function Home() {
   const data: Player[] = getResults();
   const countryData: CountryData[] = getCountries();
 
+  const countryResults = getResultsByCountry();
+  const countryResultsArray = Array.from(countryResults.entries());
   return (
     <>
       <div className="p-leaderboard">
@@ -24,7 +26,8 @@ export default function Home() {
         <LeaderboardTable data={data} />
 
         <h1>Country Leaderboard</h1>
-        <div className="flex-grid">
+        <CountryLeaderboards countryResultsArray={countryResultsArray} />
+        {/* <div className="flex-grid">
           {countryData.map((country: any) => (
             <div className="col" key={country[0]}>
               <img
@@ -38,7 +41,7 @@ export default function Home() {
               </p>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </>
   );
