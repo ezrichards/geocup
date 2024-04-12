@@ -2,10 +2,11 @@
 import { useState } from "react";
 import { CountryResult, TotalPlayer } from "../parser/data";
 import "./CountryLeaderboards.scss";
+import { emojiFlag } from "@rapideditor/country-coder";
 
 const countrySort = (
   [, countryA]: [string, CountryResult],
-  [, countryB]: [string, CountryResult],
+  [, countryB]: [string, CountryResult]
 ) => countryB.totalPoints - countryA.totalPoints;
 
 export const CountryLeaderboards = ({
@@ -29,7 +30,7 @@ export const CountryLeaderboards = ({
   const sortByScore = (avg: boolean) => {
     return (
       [, playerA]: [string, TotalPlayer],
-      [, playerB]: [string, TotalPlayer],
+      [, playerB]: [string, TotalPlayer]
     ) => getPlayerPoints(playerB) - getPlayerPoints(playerA);
   };
 
@@ -61,23 +62,16 @@ export const CountryLeaderboards = ({
           <div key={country}>
             <div
               className="card"
-              style={
-                {
-                  "--img-url": `url(https://flagsapi.com/${country.toUpperCase()}/flat/64.png)`,
-                } as React.CSSProperties
-              }
               onClick={() => {
                 setFocusedCountry((old) => (old === country ? null : country));
               }}
             >
+              <div className="bg-image">{emojiFlag(country)}</div>
+
               {/* Total points in country{result.totalPoints.toFixed(0)} */}
               <div className="country-img">
                 <div className="dummy"></div>
-                <img
-                  className="image"
-                  src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
-                  alt={`${country} flag`}
-                />
+                <div className="flag-image">{emojiFlag(country)}</div>
                 <p className="country-code">{country.toUpperCase()}</p>
               </div>
               <div className="mini-leaderboard">

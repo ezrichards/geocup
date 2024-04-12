@@ -15,6 +15,9 @@
     .dummy {
       width: 40px;
     }
+    .flag-image {
+      font-size: 80px;
+    }
     .country-code {
       width: 40px;
       padding-left: 20px;
@@ -42,6 +45,7 @@
 
   .card {
     box-sizing: border-box;
+    container-type: inline-size;
     height: 100%;
     border: 1px solid rgba(var(--card-border-rgb), 0.2);
     border-radius: 8px;
@@ -56,45 +60,33 @@
       background-color: rgba(var(--country-card-rgb-hover), 0.5);
       border: 1px solid rgba(var(--card-border-rgb), 0.3);
       //   overflow: visible;
-      ::before {
-        filter: brightness(0.28) blur(20px) opacity(0.1);
+      .bg-image {
+        filter: brightness(0.28) blur(20px) opacity(0.4);
         @media (prefers-color-scheme: light) {
-          filter: contrast(0.7) brightness(1) blur(20px) opacity(0.05);
+          filter: contrast(0.7) brightness(1) blur(20px) opacity(0.3);
         }
       }
     }
-    ::before {
-      content: "";
-      transition: filter 0.3s ease-out;
+    .bg-image {
+      pointer-events: none;
       position: absolute;
-      //   width: 100%;
-      //   height: 100%;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.28) blur(35px) opacity(0.1);
-      @media (prefers-color-scheme: light) {
-        filter: contrast(0.7) brightness(1) blur(40px) opacity(0.05);
-      }
+
+      top: -7cqh;
+      left: -13px;
+      // content: var(--content);
+      font-size: 120cqi;
+      transition: filter 0.3s ease-out;
+      width: 100%;
+      height: 100%;
+      // background-size: cover;
+      // background-position: center;
+      filter: brightness(0.28) blur(35px) opacity(0.3);
       z-index: -1;
-      background-image: var(--img-url);
+      // background-image: var(--img-url);
+      @media (prefers-color-scheme: light) {
+        filter: contrast(0.7) brightness(1) blur(40px) opacity(0.2);
+      }
     }
-    // ::after {
-    //   content: "";
-    //   transition: filter 0.3s ease-in-out;
-
-    //   position: absolute;
-    //   //   width: 100%;
-    //   //   height: 100%;
-    //   inset: 0;
-    //   background-size: 45px; /* Cover the entire area of the element */
-    //   background-position: center; /* Center the background image */
-
-    //   filter: saturate(1) opacity(0); /* Adjust the blur intensity as needed */
-
-    //   z-index: -1;
-    //   background-image: var(--img-url);
-    // }
   }
 
   .image {
