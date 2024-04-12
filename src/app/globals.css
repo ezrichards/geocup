@@ -38,6 +38,8 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+  --country-card-rgb: 220, 220, 220;
+  --country-card-rgb-hover: 220, 220, 220;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -46,6 +48,8 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 18, 18, 18;
 
+    --country-card-rgb: 25, 25, 25;
+    --country-card-rgb-hover: 35, 35, 35;
     --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
     --secondary-glow: linear-gradient(
       to bottom right,

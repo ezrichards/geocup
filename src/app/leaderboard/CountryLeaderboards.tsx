@@ -72,12 +72,13 @@ export const CountryLeaderboards = ({
             >
               {/* Total points in country{result.totalPoints.toFixed(0)} */}
               <div className="country-img">
+                <div className="dummy"></div>
                 <img
                   className="image"
                   src={`https://flagsapi.com/${country.toUpperCase()}/flat/64.png`}
                   alt={`${country} flag`}
                 />
-                <p>{country.toUpperCase()}</p>
+                <p className="country-code">{country.toUpperCase()}</p>
               </div>
               <div className="mini-leaderboard">
                 {Array.from(result.players.entries())
@@ -103,15 +104,8 @@ export const CountryLeaderboards = ({
   );
 };
 
-const getEmoji = (index: number) => {
-  switch (index) {
-    case 0:
-      return "🥇";
-    case 1:
-      return "🥈";
-    case 2:
-      return "🥉";
-    default:
-      return "";
-  }
+const getEmoji = (index: number): string => {
+  const emojis = ["🥇", "🥈", "🥉", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣"];
+  if (index < emojis.length) return emojis[index];
+  return "💀";
 };
