@@ -13,11 +13,15 @@ export const metadata = {
 export default function Home() {
   const games: Day[] = [];
 
-  fs.readdirSync("games").forEach((file, index) => {
-    games.push({
-      code: file.split("-")[1].split(".")[0],
-      day: index + 1,
-    });
+  var daysPlayed = 1;
+  fs.readdirSync("games").forEach((file) => {
+    if (file.includes("-")) {
+      games.push({
+        code: file.split("-")[1].split(".")[0],
+        day: daysPlayed,
+      });
+      daysPlayed++;
+    }
   });
 
   return (

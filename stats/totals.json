@@ -2,32 +2,32 @@
   "totals": [
     {
       "name": "shane",
-      "totalScore": 94844,
-      "totalTime": 3531,
+      "totalScore": 156689,
+      "totalTime": 5931,
       "perfects": 0
     },
     {
       "name": "ethanzr",
-      "totalScore": 104961,
-      "totalTime": 3333,
-      "perfects": 1
+      "totalScore": 177958,
+      "totalTime": 5665,
+      "perfects": 2
     },
     {
       "name": "Kelly Dance",
-      "totalScore": 78058,
-      "totalTime": 2374,
-      "perfects": 0
+      "totalScore": 144271,
+      "totalTime": 4344,
+      "perfects": 1
     },
     {
       "name": "Sumner Evans",
-      "totalScore": 103010,
-      "totalTime": 3572,
-      "perfects": 0
+      "totalScore": 152038,
+      "totalTime": 5365,
+      "perfects": 1
     },
     {
       "name": "Breadleaf",
-      "totalScore": 27029,
-      "totalTime": 886,
+      "totalScore": 33183,
+      "totalTime": 1022,
       "perfects": 0
     },
     {
@@ -38,20 +38,26 @@
     },
     {
       "name": "Byron Sharman",
-      "totalScore": 54086,
-      "totalTime": 2389,
+      "totalScore": 109043,
+      "totalTime": 4643,
       "perfects": 0
     },
     {
       "name": "Tyler Wright",
-      "totalScore": 12545,
-      "totalTime": 267,
+      "totalScore": 26930,
+      "totalTime": 657,
       "perfects": 0
     },
     {
       "name": "JaydenP",
       "totalScore": 8327,
       "totalTime": 423,
+      "perfects": 0
+    },
+    {
+      "name": "MerryCity318",
+      "totalScore": 11903,
+      "totalTime": 595,
       "perfects": 0
     }
   ]

@@ -27,6 +27,9 @@ for item in data["items"]:
     total_time = item["game"]["player"]["totalTime"]
     perfects = item.get("perfects", 0)  # Get 'perfects' field if it exists
 
+    if total_score == 5000:
+        perfects += 1
+
     # If player exists, update their score, time, and perfects
     if player_name in player_info:
         player_info[player_name]["totalScore"] += total_score
