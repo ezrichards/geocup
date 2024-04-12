@@ -17,10 +17,10 @@ export const getResults = () => {
       totalTimeSeconds: Number(item.totalTime),
       percentage:
         String(
-          Math.round(Number(item.totalScore / (25000 * DAYS_PLAYED)) * 100)
+          Math.round(Number(item.totalScore / (25000 * DAYS_PLAYED)) * 100),
         ) + "%",
       perfectGames: item.perfects,
-    })
+    }),
   );
   return players;
 };
@@ -47,7 +47,7 @@ export const getResultsByCountry = () => {
 
   files.forEach((file) => {
     const data: Root = JSON.parse(
-      fs.readFileSync(`games/${file}`, { encoding: "utf-8" })
+      fs.readFileSync(`games/${file}`, { encoding: "utf-8" }),
     );
     const items = data.items;
     //loop over each player
