@@ -12,7 +12,7 @@ export const getResults = () => {
 
   files.forEach((file) => {
     const data: Root = JSON.parse(
-      fs.readFileSync(`games/${file}`, { encoding: "utf-8" })
+      fs.readFileSync(`games/${file}`, { encoding: "utf-8" }),
     );
     const items = data.items;
     //loop over each player
@@ -81,7 +81,7 @@ export const getResultsByCountry = () => {
 
   files.forEach((file) => {
     const data: Root = JSON.parse(
-      fs.readFileSync(`games/${file}`, { encoding: "utf-8" })
+      fs.readFileSync(`games/${file}`, { encoding: "utf-8" }),
     );
     const items = data.items;
     //loop over each player

@@ -5,7 +5,7 @@ import "./CountryLeaderboards.scss";
 
 const countrySort = (
   [, countryA]: [string, CountryResult],
-  [, countryB]: [string, CountryResult]
+  [, countryB]: [string, CountryResult],
 ) => countryB.totalPoints - countryA.totalPoints;
 
 export const CountryLeaderboards = ({
@@ -29,7 +29,7 @@ export const CountryLeaderboards = ({
   const sortByScore = (avg: boolean) => {
     return (
       [, playerA]: [string, TotalPlayer],
-      [, playerB]: [string, TotalPlayer]
+      [, playerB]: [string, TotalPlayer],
     ) => getPlayerPoints(playerB) - getPlayerPoints(playerA);
   };
 
