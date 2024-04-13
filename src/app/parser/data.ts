@@ -1,5 +1,4 @@
 import fs from "fs";
-import results from "../../../stats/totals.json";
 import countries from "../../../stats/countries.json";
 import Player from "../types/player";
 import { Country, CountryData } from "../types/country";
