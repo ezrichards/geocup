@@ -1,9 +1,8 @@
 import "./page.scss";
 import React from "react";
 import Player from "../types/player";
-import { getCountries, getResults, getResultsByCountry } from "../parser/data";
+import { getResults, getResultsByCountry } from "../parser/data";
 import { LeaderboardTable } from "./LeaderboardTable";
-import { CountryData } from "../types/country";
 import Header from "@/components/Header";
 import { CountryLeaderboards } from "./CountryLeaderboards";
 export const metadata = {
@@ -13,7 +12,6 @@ export const metadata = {
 
 export default function Home() {
   const data: Player[] = getResults();
-  const countryData: CountryData[] = getCountries();
 
   const countryResults = getResultsByCountry();
   const countryResultsArray = Array.from(countryResults.entries());

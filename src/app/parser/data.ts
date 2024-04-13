@@ -1,7 +1,5 @@
 import fs from "fs";
-import countries from "../../../stats/countries.json";
 import Player from "../types/player";
-import { Country, CountryData } from "../types/country";
 import { Root } from "../types/json";
 import { iso1A2Code } from "@rapideditor/country-coder";
 
@@ -152,23 +150,4 @@ export const getResultsByCountry = () => {
   });
 
   return resultsByCountry;
-};
-
-export const getCountries = () => {
-  const resultCountries: CountryData[] = [];
-
-  countries.countries.map((country: any) => {
-    const code = Object.keys(country)[0];
-    let maxPlayer = "";
-    let maxCount = 0;
-    country[Object.keys(country)[0]].map((countryPlayer: any) => {
-      if (countryPlayer.count > maxCount) {
-        maxPlayer = countryPlayer.name;
-        maxCount = countryPlayer.count;
-      }
-    });
-    resultCountries.push([code.toUpperCase(), maxPlayer, maxCount]);
-  });
-
-  return resultCountries;
 };
