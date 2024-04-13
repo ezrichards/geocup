@@ -25,21 +25,6 @@ export default function Home() {
 
         <h1>Country Leaderboard</h1>
         <CountryLeaderboards countryResultsArray={countryResultsArray} />
-        {/* <div className="flex-grid">
-          {countryData.map((country: any) => (
-            <div className="col" key={country[0]}>
-              <img
-                className="image"
-                src={`https://flagsapi.com/${country[0]}/flat/64.png`}
-                alt={`${country[0]} flag`}
-              />
-              <p>{country[0]}</p>
-              <p>
-                <strong>{country[1]}</strong>: {country[2]}
-              </p>
-            </div>
-          ))}
-        </div> */}
       </div>
     </>
   );
