@@ -7,9 +7,11 @@ import {
   getResultsByDay,
 } from "../parser/data";
 import { LeaderboardTable } from "./LeaderboardTable";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import { CountryLeaderboards } from "./CountryLeaderboards";
-import { Chart } from "./Chart";
+import dynamic from "next/dynamic";
+// import { Chart } from "./Chart";
+const Chart = dynamic(() => import("./Chart"), { ssr: false });
 
 export const metadata = {
   title: "GeoCup Leaderboard",

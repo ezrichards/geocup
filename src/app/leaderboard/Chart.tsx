@@ -19,7 +19,7 @@ const colors = [
   "#a4de6c",
   "#82ca9d",
 ];
-export const Chart = ({ data }: { data: PlayerSeries[] }) => {
+const Chart = ({ data }: { data: PlayerSeries[] }) => {
   return (
     // <ResponsiveContainer width="100%" height="100%">
     <LineChart
@@ -51,3 +51,5 @@ export const Chart = ({ data }: { data: PlayerSeries[] }) => {
     // </ResponsiveContainer>
   );
 };
+
+export default Chart;
