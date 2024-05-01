@@ -38,15 +38,9 @@ export default function Home() {
           links from previous days.
         </p>
         <p>
-          <strong>
-            Results will be uploaded to the site around 9:00 PM MST every day.
-          </strong>{" "}
-          You can still play afterwards, you just may not show up on the live
+          <strong>GeoCup is now over! Thanks for playing. :)</strong> See who
+          won on the
           <Link href="/leaderboard"> leaderboard</Link>.
-        </p>
-        <p>
-          This site is still under construction! Send me a message on Discord @{" "}
-          <strong>ethanzr</strong> with any feedback or bugs.
         </p>
         {games.reverse().map((game) => (
           <p key={game.code}>
